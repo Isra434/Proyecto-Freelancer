@@ -8,6 +8,9 @@ body
 {
     font-size: 16px;
     font-family: var(--fuentePrimaria);
+    /*Con background-image: linear-gradiente, nos permite fijar un difuminado, recibe tres parametros
+    de donde iniciara, el color inferior, el color superior */
+    background-image: linear-gradient(to top, var(--azulOscuro) 0%,  var(--azulClaro)  100%);
 }
 /********************************************/
 
@@ -20,13 +23,15 @@ body
     --gris:#757575;
     --primario:#ffc107;
     --secundario:#0097a7;
+    --azulOscuro: #1B445B;
+    --azulClaro: #7BCBFB;
     /*Fuentes*/
     --fuentePrimaria: 'Montserrat', sans-serif;
     /*Tamaño de fuentes*/
     --negritas:800;
 }
 /*********************************/
-
+/******NORMALIZACION DEL HTML*****/
 html
 {   
     font-size: 62.5%;
@@ -37,7 +42,7 @@ html
 {
     box-sizing: inherit;
 }
-
+/*********************************/
 /*
 .titulo
 {
@@ -73,7 +78,39 @@ h1, h2, h3
     margin: 0 auto;
     
 }
+/***DEFINICION DE LOS BOTONES***/
+.boton 
+{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 10px 30px;
+    margin-top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: var(--negritas);
+    border-radius: 5px;
+    text-align: center;
+}
 
+@media (min-width: 480px) 
+{
+  .boton
+  {
+    width: auto;
+  }
+}
+/*********************************/
+/***CREACION DE UN EFECTO DE SOMBRA***/
+.sombra
+{
+    -webkit-box-shadow: 20px 20px 30px 7px rgba(0,0,0,0.84);
+    -moz-box-shadow: 20px 20px 30px 7px rgba(0,0,0,0.84);
+    box-shadow: 20px 20px 30px 7px rgba(0,0,0,0.84);
+    padding: 2rem;
+    border-radius: 3rem;
+}
+/*********************************/
 .nav-bg
 {
     background-color: var(--secundario);
@@ -111,7 +148,7 @@ h1, h2, h3
     background-color: var(--primario);
     color: var(--negro);
 }
-
+/***DEFINICION DE LA IMAGEN***/
 .hero
 {
     background-image: url(../img/img.jpeg);
@@ -119,8 +156,9 @@ h1, h2, h3
     background-size: cover;
     height: 300px;
     position: relative;
+    margin-bottom: 2rem;
 }
-
+/*********************************/
 .contenido-hero
 {
     position: absolute;
@@ -137,4 +175,11 @@ h1, h2, h3
 {
     color: var(--blanco);
     font-weight: var(--negritas);
+}
+
+.ubicacion
+{
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
 }
